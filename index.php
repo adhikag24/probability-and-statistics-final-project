@@ -6,8 +6,8 @@
 </head>
 <body>
 <h2>Final Project Probability and Statistics</h2>
-    <form action="Control.php">
-        <select name="operation" id="operation">
+    <form action="control.php" method="POST">
+        <select name="select" id="select" name="select">
             <option value="intro">Intro to Probability</option>
             <option value="conditional">Conditional</option>
             <option value="bayes">Bayes</option>
