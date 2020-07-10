@@ -3,6 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Project Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 <h2>Final Project Probability and Statistics</h2>
@@ -11,7 +14,7 @@
             <option value="intro">Intro to Probability</option>
             <option value="conditional">Conditional</option>
             <option value="bayes">Bayes</option>
-        </select>
+        </select><br><br>
     <button type="submit">Apply</button>
     </form>
     

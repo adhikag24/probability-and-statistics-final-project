@@ -1,0 +1,18 @@
+body{
+    background-color: powderblue;
+    text-align: center;
+}
+h1{
+    color: blueviolet;
+    font-size: 40px;
+}
+p.answer{
+    color: blue;
+    
+}
+* {
+    font-family: 'Balsamiq Sans', cursive;
+}
+input.form{
+    border: 2px solid green;
+}

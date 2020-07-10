@@ -23,18 +23,20 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <title>Statistics Calculator</title>
 </head>
 <body>
     <?php if($_SESSION['select'] == "bayes"): ?>
-        <label for="">Bayes Calculator</label><br><br>
+        <h2>Bayes Calculator</h2>
         <form action="" method="GET">
             <label for="">P(A)</label>
-                <input type="number" name="pa" id="pa" step="any" required> <br>
+                <input type="number" name="pa" id="pa" step="any" required> <br><br>
             <label for="">P(B)</label>
-                <input type="number" name="pb" id="pb" step="any" required> <br>
-            <label for="">P(B|A)</label>
-                <input type="number" name="pba" id="pba" step="any" required>
+                <input type="number" name="pb" id="pb" step="any" required> <br><br>
+            <label for="">P(B | A)</label>
+                <input type="number" name="pba" id="pba" step="any" required><br><br>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
 
@@ -52,12 +54,12 @@ else{
         ?>
 
     <?php elseif($_SESSION['select'] == "intro"): ?>
-        <label for="">Intro to Probability</label>
+        <h2>Intro to Probability</h2>
         <form action="" method="GET">
             <label for="">Way it happen?</label><br>
-                <input type="number" name="way_it_happen" id="way_it_happen" step="any" required> <br>
+                <input type="number" name="way_it_happen" id="way_it_happen" step="any" required> <br><br>
             <label for="">Total</label><br>
-                 <input type="number" name="total" id="total" step="any" required> <br>
+                 <input type="number" name="total" id="total" step="any" required> <br><br>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
 
@@ -73,12 +75,12 @@ else{
         }
         ?>
     <?php elseif($_SESSION['select'] == "conditional"): ?>
-        <label for="">Conditional Probability</label>
-        <form action="" method="GET">
+        <h2>Conditional Probability</h2> 
+            <form action="" method="GET">
             <label for="">P(A and B)</label><br>
-                <input type="number" name="paandb" id="paandb" step="any" required> <br>
+                <input type="number" name="paandb" id="paandb" step="any" required> <br><br>
             <label for="">P(A)</label><br>
-                 <input type="number" name="pa" id="pa" step="any" required> <br>
+                 <input type="number" name="pa" id="pa" step="any" required> <br><br>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
 
@@ -98,7 +100,7 @@ else{
     <p>Page not found</p>
 
     <?php endif; ?>
-
+        <br><br>
     <a href="index.php">Back</a>
 
 </body>
