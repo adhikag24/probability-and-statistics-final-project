@@ -27,14 +27,14 @@ else{
 </head>
 <body>
     <?php if($_SESSION['select'] == "bayes"): ?>
-        <label for="">Bayes Calculator</label>
+        <label for="">Bayes Calculator</label><br><br>
         <form action="" method="GET">
             <label for="">P(A)</label>
-            <input type="number" name="pa" id="pa" step="any" required> <br>
+                <input type="number" name="pa" id="pa" step="any" required> <br>
             <label for="">P(B)</label>
-            <input type="number" name="pb" id="pb" step="any" required> <br>
+                <input type="number" name="pb" id="pb" step="any" required> <br>
             <label for="">P(B|A)</label>
-            <input type="number" name="pba" id="pba" step="any" required>
+                <input type="number" name="pba" id="pba" step="any" required>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
 
@@ -47,13 +47,52 @@ else{
 
             $pab = bayes($pa, $pb, $pba);
 
-            echo $pab;
+            echo round($pab, 2);
         }
         ?>
 
-    <?php elseif($_SESSION['select'] == " "): ?>
+    <?php elseif($_SESSION['select'] == "intro"): ?>
+        <label for="">Intro to Probability</label>
+        <form action="" method="GET">
+            <label for="">Way it happen?</label><br>
+                <input type="number" name="way_it_happen" id="way_it_happen" step="any" required> <br>
+            <label for="">Total</label><br>
+                 <input type="number" name="total" id="total" step="any" required> <br>
+            <button type="submit" name="submit" id="submit">Calculate</button>
+        </form>
 
-    <?php elseif($_SESSION['select'] == " "): ?>
+        <label for="">Answer: </label><br>
+        <?php 
+        if (isset($_GET['submit'])){
+            $way_it_happen = $_GET['way_it_happen'];
+            $total = $_GET['total'];
+
+            $answer = intro($way_it_happen, $total);
+
+            echo round($answer, 2);
+        }
+        ?>
+    <?php elseif($_SESSION['select'] == "conditional"): ?>
+        <label for="">Conditional Probability</label>
+        <form action="" method="GET">
+            <label for="">P(A and B)</label><br>
+                <input type="number" name="paandb" id="paandb" step="any" required> <br>
+            <label for="">P(A)</label><br>
+                 <input type="number" name="pa" id="pa" step="any" required> <br>
+            <button type="submit" name="submit" id="submit">Calculate</button>
+        </form>
+
+        <label for="">Answer: </label><br>
+        <?php 
+        if (isset($_GET['submit'])){
+            $paandb = $_GET['paandb'];
+            $pa = $_GET['pa'];
+
+            $answer = conditional($paandb, $pa);
+
+            echo round($answer, 2);
+        }
+        ?>
 
     <?php else: ?>
     <p>Page not found</p>
