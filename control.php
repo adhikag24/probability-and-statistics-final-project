@@ -112,7 +112,7 @@ if (!empty($_POST['select'])){
         <br><br>
         </div>
         
-    <a href="index.php" nam="back" id="back">Back</a>
+    <a href="index.php" name="back" id="back">Back</a>
         
 </body>
 </html>
