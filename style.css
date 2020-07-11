@@ -1,13 +1,21 @@
 body{
     background-color: powderblue;
-    float: center;
+    text-align: center;
     
+}
+
+.div1 {
+    border-radius: 50px;
 }
 
 * {
     font-family: 'Balsamiq Sans', cursive;
-    font-size: 50px;
+    font-size: 25px;
 }
 input.form{
     border: 2px solid green;
+}
+h1{
+    color: blueviolet;
+    font-size: 40px;
 }

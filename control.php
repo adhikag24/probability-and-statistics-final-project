@@ -23,13 +23,16 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <title>Statistics Calculator</title>
 </head>
 <body>
+    
     <?php if($_SESSION['select'] == "bayes"): ?>
-        <h2>Bayes Calculator</h2>
+        <h1>Bayes Theorem</h1>
+        
+        <div class="div1">
         <form action="" method="GET">
             <label for="">P(A)</label>
                 <input type="number" name="pa" id="pa" step="any" required> <br><br>
@@ -39,8 +42,8 @@ else{
                 <input type="number" name="pba" id="pba" step="any" required><br><br>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
-
         <label for="">Answer: </label><br>
+        
         <?php 
         if (isset($_GET['submit'])){
             $pa = $_GET['pa'];
@@ -52,9 +55,11 @@ else{
             echo round($pab, 2);
         }
         ?>
-
+        </div>
+    
     <?php elseif($_SESSION['select'] == "intro"): ?>
-        <h2>Intro to Probability</h2>
+        <h1>Intro to Probability </h1>
+        <div class="div1">
         <form action="" method="GET">
             <label for="">Way it happen?</label><br>
                 <input type="number" name="way_it_happen" id="way_it_happen" step="any" required> <br><br>
@@ -62,7 +67,6 @@ else{
                  <input type="number" name="total" id="total" step="any" required> <br><br>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
-
         <label for="">Answer: </label><br>
         <?php 
         if (isset($_GET['submit'])){
@@ -74,10 +78,13 @@ else{
             echo round($answer, 2);
         }
         ?>
+        </div>
+
     <?php elseif($_SESSION['select'] == "conditional"): ?>
-        <h2>Conditional Probability</h2> 
+        <h1>Conditional Probability</h1> 
+        <div class="div1">
             <form action="" method="GET">
-            <label for="">P(A and B)</label><br>
+            <label for="">P(A ∩ B)</label><br>
                 <input type="number" name="paandb" id="paandb" step="any" required> <br><br>
             <label for="">P(A)</label><br>
                  <input type="number" name="pa" id="pa" step="any" required> <br><br>
@@ -95,12 +102,13 @@ else{
             echo round($answer, 2);
         }
         ?>
-
     <?php else: ?>
     <p>Page not found</p>
 
     <?php endif; ?>
         <br><br>
+        </div>
+        
     <a href="index.php">Back</a>
 
 </body>
