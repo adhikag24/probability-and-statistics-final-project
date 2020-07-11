@@ -1,6 +1,7 @@
 body{
-    background-color: powderblue;
+    background-image: url('assets/bgimg.jpg');
     text-align: center;
+    color: #2e8b57;
     
 }
 
@@ -16,6 +17,6 @@ input.form{
     border: 2px solid green;
 }
 h1{
-    color: blueviolet;
+    color:black;
     font-size: 40px;
 }
