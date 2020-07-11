@@ -14,3 +14,4 @@
         $answer = $paandb / $pa;
         return $answer;
     }
+?>

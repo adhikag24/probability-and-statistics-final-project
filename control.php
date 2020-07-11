@@ -1,21 +1,10 @@
 <?php
 session_start(); 
 require_once('calculate.php');
-if (empty($_POST['select'])){
-    if ($_SESSION['select'] == 'bayes'){
-        $_SESSION['select'] = 'bayes';
-    }
-    elseif ($_SESSION['select'] == 'test'){
-    
-    }
-    elseif ($_SESSION['select'] == 'test2'){
-    
-    }
-}
-else{
+if (!empty($_POST['select'])){
     $_SESSION['select'] = $_POST['select'];
-    
 }
+
 
 
 ?>
@@ -42,7 +31,7 @@ else{
                 <input type="number" name="pba" id="pba" step="any" required><br><br>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
-        <label for="">Answer: </label><br>
+        
         
         <?php 
         if (isset($_GET['submit'])){
@@ -50,9 +39,14 @@ else{
             $pb = $_GET['pb'];
             $pba = $_GET['pba'];
 
-            $pab = bayes($pa, $pb, $pba);
-
-            echo round($pab, 2);
+            if ($pb == 0){
+                echo "Cannot divide 0, will result infinite.";
+            }
+            else{
+                $pab = bayes($pa, $pb, $pba);
+                echo "<label>Answer: </label><br>";
+                echo round($pab, 2);
+            }
         }
         ?>
         </div>
@@ -67,15 +61,20 @@ else{
                  <input type="number" name="total" id="total" step="any" required> <br><br>
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
-        <label for="">Answer: </label><br>
+        
         <?php 
         if (isset($_GET['submit'])){
             $way_it_happen = $_GET['way_it_happen'];
             $total = $_GET['total'];
 
+            if ($total == 0){
+                echo "Cannot divide 0, will result infinite.";
+            }
+            else{
             $answer = intro($way_it_happen, $total);
-
+            echo "<label>Answer: </label><br>";
             echo round($answer, 2);
+            }
         }
         ?>
         </div>
@@ -91,15 +90,19 @@ else{
             <button type="submit" name="submit" id="submit">Calculate</button>
         </form>
 
-        <label for="">Answer: </label><br>
         <?php 
         if (isset($_GET['submit'])){
             $paandb = $_GET['paandb'];
             $pa = $_GET['pa'];
 
-            $answer = conditional($paandb, $pa);
-
-            echo round($answer, 2);
+            if ($pa == 0){
+                echo "Cannot divide 0, will result infinite.";
+            }
+            else{
+                $answer = conditional($paandb, $pa);
+                echo "<label>Answer: </label><br>";
+                echo round($answer, 2);
+            }  
         }
         ?>
     <?php else: ?>
@@ -109,8 +112,8 @@ else{
         <br><br>
         </div>
         
-    <a href="index.php">Back</a>
-
+    <a href="index.php" nam="back" id="back">Back</a>
+        
 </body>
 </html>
 
